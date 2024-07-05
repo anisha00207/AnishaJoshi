@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a576244d6e.js" crossorigin="anonymous"></script>
+    <title>Anisha Joshi Portfolio</title>
+    
+    <style>
+         .containers:hover h2, .containers:hover p,  .containers:hover i {
+            color: black !important;
+        }
+         .no-underline {
+            text-decoration: none;
+            cursor: pointer;           
+            text-decoration-color: white;
+        }
+        @media (max-width: 768px) {
+          
+
+        }
+        #navbar.blur {
+    backdrop-filter: blur(8 px); /* Add your blur settings here */
+    transition: backdrop-filter 0.1s ease; /* Change this line to adjust transition speed of greeting texts*/
+}
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="header" id="#home">
+
+        
+
+            <nav id="navbar" >
+               
+                <ul id="sidemenu">
+                    <li><a href="#"  class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                  
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                 
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                    
+                </ul>
+            <i  class="fas fa-bars" onclick="openmenu()"></i>
+                
+                
+            </nav>
+               
+
+            <div class="header-text">
+
+                
+               <span class="ityped2"style=" color:#F49F1C;" ></span>
+               <br>
+                
+               <h1  style=" color:#F49F1C;" >
+                  
+                    I'm 
+                 
+                   Anisha Joshi
+                <br>
+
+                </h1>
+                
+                <h3 style=" color:#F49F1C;" >From the <span>hills of Uttarakhand</span>, India</h3>
+                <!-- <br> -->
+                <div class="socials mt-4" class="lable">
+                    
+                    <a  class="social-item" href="https://github.com/anisha00207" target=”_blank”><i class="fa-brands fa-github"></i></i></a>
+                    <a class="social-item"  href="https://leetcode.com/u/anisha002july/" target=”_blank”><i class=" icon-circle-arrow-up"> {/></i></a>
+                    <a  class="social-item" href="https://www.linkedin.com/in/anisha-joshi15//" target=”_blank”
+                    ><i class="fab fa-linkedin"></i></a>
+                   
+                    
+                   
+                </div>
+               
+               
+
+            </div>
+            
+
+
+        
+
+    </div>
+
+    <!-- ......................about........................ -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user3.jpeg" alt="user" id="anisha-img">
+                </div>
+                <div class="about-col-2" style="padding-top: 10px;">
+                    <h2 class="sub-title sub-title1"  style=" color:#F49F1C;">About Me</h2>
+                    <p style="padding-top: 20px;" >
+                        
+                       From designing visually captivating front-end interfaces 
+                       <br> to  exploring the intricacies of back-end systems,
+                       <br> my passion for programming is limitless.
+                       <br> Energized by a relentless curiosity and a spark of creativity,
+                       <br><strong> I thrive on coding, debugging, and bringing innovative solutions to life 🚀 </strong>   
+                       
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                       
+                    </div>
+                  
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            
+                            <li>
+                                <span>Competitive Programming
+                                     <a style="color: aliceblue;" target=”_blank”
+                                     >@anisha002july</a>
+                                </span>
+                                <div style="margin-top: 15px;">                                        
+                                    <a style="margin: 2px; font-size:11px; margin-left: 2px; border-radius: 5px; padding: 5px; text-decoration: none; color:white; background-color: green;" href="https://www.geeksforgeeks.org/user/anisha002july/" target=”_blank”> Geeks for Geeks </a>
+                                    <a style="margin: 2px; font-size:11px; margin-left: 35px; border-radius: 5px; padding: 5px; text-decoration: none; color: black; background-color:rgb(253, 255, 107);" href="https://leetcode.com/anisha002july/"target=”_blank”> leetcode </a> 
+                                 <!--   <a style="margin: 2px; font-size:11px; margin-left: 40px; border-radius: 5px; padding: 5px; text-decoration: none; color: aliceblue; background-color:rgb(255, 0, 47);" href="> codechef  </a> -->
+                                </div>
+                                <li >
+                                    <a style="font-size:11px; border-radius: 5px; padding: 2px; text-decoration: none;  color: green;" href="https://www.geeksforgeeks.org/user/anisha002july/" target=”_blank”> (Rank, <strong>1125</strong>) </a>
+                                    <a style=" font-size:11px;   text-decoration: none; margin-left: 50px;  color:rgb(253, 255, 107);" href="https://leetcode.com/anisha002july/" target=”_blank”><strong> &nbsp; &nbsp;    (max. 1412)</strong> </a> 
+                                  <!--  <a style="font-size:11px; border-radius: 5px; padding: 2px; text-decoration: none; margin-left: 20px; color:rgb(0, 0, 0); color:rgb(255, 0, 47);" href=""> (max.<strong> </strong> , )  </a>-->
+                                </li>
+                              
+                                
+                                
+
+                            </li>
+                            <li><span>Programming Languages</span><br>
+                                <!-- <span>2</span><br><span>3</span>-->
+                                C++  </li>
+                            <li><span>Web Development</span><br>
+                                <!-- <span>2</span><br><span>3</span>-->
+                                HTML . CSS . JS . React JS . Node Js . Express JS . PHP  </li>
+                            <li><span>Database Management</span><br>
+                                <!-- <span>2</span><br><span>3</span>-->
+                                  MYSQL . MongoDB</li>
+
+                            
+                                
+                               
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            
+                        </ul>
+                        <ul>
+                            <li><span>Smart India Hackathon (SIH 2023)</span>
+                                <br>Frontend Developer<br>
+                                
+                            </li>
+                            <li><span>Ojaswi &nbsp;<a style="color:#F49F1C;" href="https://www.linkedin.com/posts/anisha-joshi15_event-lpuuniversity-organization-activity-7021915592118939648-ufdB?utm_source=share&utm_medium=member_desktop" target=”_blank”>
+                                <i class="fa-solid fa-up-right-from-square" ></i></a><br>(Student Organization Lovely Professional University)</span>
+                                <br>Head of Event Management<br>
+                               
+                            </li>
+                          
+                        </ul>
+                        
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>Lovely Professional University<br>7.67</li>
+                            <li><span>2020 (Higher Secondary)</span><br>Shiwalik Public School<br>91.2%</li>
+                            <li><span>2018 (Secondary School)</span><br>Shiwalik Public School<br>90.4%</li>
+                        </ul>
+                    </div>
+                   
+
+                </div>
+              
+                
+            </div>
+        </div>
+    </div>
+    <!-- Services -->
+    <div id="services">
+        <div class="container">
+            <h2 class="sub-title sub-title2 "> Skills</h2>
+            <div class="containers">
+                <div class="services-list" >
+                <!-- Services Section -->
+
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    <!-- Service 1: Web Development -->
+                    <a href="https://github.com/stars/anisha00207/lists/backend" class="no-underline" target=”_blank”>
+                        <h2 style="color: #fff;">Back-end</h2>
+                        <p style="color: #fff;">
+                            I specialize in creating robust back-end systems for websites using my expertise in Node.js, PHP, Django, and other technologies. My dedication lies in developing efficient and effective back-end solutions that deliver exceptional results.
+                        </p>
+                    </a>
+                </div>
+
+                <!-- Service 2: App Development -->
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <a href="https://github.com/stars/anisha00207/lists/frontend" class="no-underline" target=”_blank”>
+                        <h2 style="color: #fff;">Front-end</h2>
+                        <p style="color: #fff;">
+                            I also design the front-end of websites, creating visually appealing and user-friendly interfaces using HTML, CSS, and ReactJS. My goal is to craft engaging digital experiences that captivate users and enhance overall functionality.
+                        </p>
+                    </a>
+                </div>
+
+                <!-- Service 3: Web Design -->
+                <div>
+                   
+                    <h1><b>{ }</b></h1>
+                    <br>
+                    <br>
+                    
+                    <a href="https://github.com/stars/anisha00207/lists/programs" class="no-underline" target=”_blank”>
+                        <h2 style="color: #fff;">Others</h2>
+                        <p style="color: #fff;">
+                             I utilize Data Structures and Algorithms (DSA) to design software applications, including games. This enables me to create efficient, high-performing solutions that enhance user experience and functionality.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+    <!-- portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h2 class="sub-title3 sub-title"  style=" color:#F49F1C;">My Portfolio</h2>
+            <div class="project-list">
+                <div class="project">
+                    <img src="images/hotel.png" alt="hotelFlyhigh">
+                    <div class="layer">
+                        <p class="project-head">
+                          Hotel Fly-High <br>
+                            (using HTML, CSS, JS, PHP and MySQL )
+
+                        </p>
+                        <p>
+                             Hotel Fly-High is hotel room + services booking WebApplication , it has an admin interface to manage the details of hotel, staff and customers.
+                             <br>
+                            It uses PHP and MySQL as the backend to handle user authentication and real-time data.
+                        </p>
+                       
+                        <a href="http://hotel-flyyhigh.free.nf/index.php" target=”_blank”><i
+                                class="fas fa-link"></i></a>
+                                
+                          
+                    </div>
+                </div>
+                <div class="project">
+
+                    <img src="images/guess.png" alt="digitalDiary">
+
+                    <div class="layer">
+                        <p class="project-head">
+                            <!-- Bharat Darshan <br> -->
+                            Guess Game<br>
+                            (using HTML, CSS, JS)
+
+                        </p>
+                        <p>
+                            A game where a user has to guess the same number as that of the computer in the least number of chances possible in order to get a high score
+                        </p>
+                       
+                        <a href="https://anisha00207.github.io/GuessGame/" target=”_blank”><i class="fas fa-link"></i></a>
+                      
+                        
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/vote.png" alt="">
+                    <div class="layer">
+                        <p class="project-head">
+                            <!-- Shoplocal <br> -->
+                            PollingApp<br>(using HTML, CSS, Bootstrap and Django )
+
+                        </p>
+                       
+                        
+                            The website allows SuperUser to generate polls using and the user have to answer the polls with real-time update in results, the user can see the number of votes an option have. A user can vote only once
+                        </p>
+                       
+                        <a href="https://github.com/anisha00207/voting-app" target=”_blank”><i class="fas fa-link"></i></a>
+                        
+                       
+                    </div>
+                </div>
+
+
+            </div>
+          <a href="./projects_work.html" class="btn btn1" target=”_blank”>More Projects</a>
+
+        </div>
+
+    </div>
+    <!-- CONTACT -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h2 class="sub-title"  style=" color:#F49F1C;">Contact Me</h2>
+                    <p><i class="fas fa-paper-plane"></i>anisha002july@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 8968556806</p>
+ 
+                    <div class="social-icons">
+                        
+                       <a href="https://twitter.com/anysha455255"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/__anisha15_/" target=”_blank”><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/anisha-joshi15/" target=”_blank”><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a class="btn btn2"  style=" color:black; " 
+                    href="https://drive.google.com/file/d/1Bg7ZgN2yPjq-O_EM40COzxQWar_pg0el/view" target=”_blank”  >
+                   
+                   <b> View CV</b></a>
+                    <br>
+                    <a class="btn btn2"  style=" color:black; " 
+                    href="images/Anisha__joshi__resume.pdf" download >
+                  
+                   <b> Download CV</b></a>
+                    
+                   
+
+                   
+
+                </div>
+
+
+                <div class="contact-right">
+                    <form  >
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn3">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+               
+                </div>
+        </div>
+    </div>
+   
+       
+    <script src="https://unpkg.com/ityped@0.0.10"></script>
+   
+    
+
+    </script> {% endcomment %}
+   <script src=index.js><
+
+</html>
