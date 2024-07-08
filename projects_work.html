@@ -1,12 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anisha's portfolio</title>
-</head>
-<body style="background-color:black">
-    <h1 style="text-align:center; color:white;">IN process </h1>
+  <head>
+    <meta charset="UTF-8" />
+     <link rel="stylesheet" type="text/css" href="./style.css">
+     <script src="https://kit.fontawesome.com/a576244d6e.js" crossorigin="anonymous"></script>
+     <title>Anisha Joshi Projects</title>  
+     <link rel="icon" type="image/x-icon" href="/images/wiw.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background: #222;
+          color: #fff;
+      }
+
+      h1 {
+          text-align: center;
+          padding: 20px 0;
+      }
+      
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+      
+      .tag-bg{
+        background: #FCB548;
+          border-radius: 10px;
+          padding: 10px;
+          margin: 10px;
+          width: fit-content;
+          display: inline-block;         
+          margin-bottom: 10px;
+          cursor: pointer;
+      }
+      .filter-tag-bg{
+        font-size: small;
+        background: #FCB548;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 4px;
+          width: fit-content;
+          display: inline-block;         
+          margin-bottom: 10px;
+          cursor: pointer;
+      }
+      .card {
+  width: 350px;
+  height: auto;
+  margin: 20px;
+  background: #333;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+}
+
+
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 20px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .card-description {
+  opacity: 1;
+}
+
+/* card dis */
+.layer{
+        width: 100%;
+        
+        height: 0%;
+        background: linear-gradient(rgba(255, 255, 255, 0.6),#ecb547);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        transition: transform 0.6s;
+        /* transition: height 0.6s; */
+    }
+    .layer{
+        color: #080808;
+    }
+    .layer .project-head{
+        font-weight: 700;
+        font-size: 23px;
+        padding-bottom: 20px;
+        color: #080808;
+        
+    }
+    .layer a{
+        margin-top: 20px;
+        color: #ecb547;
+        font-size: 18px;
+        text-decoration: none;
+        line-height: 60px;
+        width: 60px;
+         
+        background-color: rgb(0, 0, 0);
+        border-radius: 60px;
+
+    }
+
+      #tag-list{
+        display: flex;
+        justify-content: center;       
+      }
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #search-input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    font-size: 16px;
+    }
+
+    #search-button,
+    #reset-button {
+    background-color: #FCB548;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    }
+
+    #search-button:hover,
+    #reset-button:hover {
+    background-color: #f7be68;
+    }
+
+        /* Responsive layout */
+        @media screen and (max-width: 600px) {
+            .card {
+                width: calc(100% - 60px);
+            }
+        }
+        .fa-home{
+            color:#F49F1C;
+         
+         
+            margin-left:5%;
+            position: fixed;
+        }
+      
+       
+        </style>
+        <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".card");
+    const filterButtons = document.querySelectorAll('.filter-tag-bg');
+    const searchBar = document.getElementById('search-input');
+
+    cards.forEach(card => {
+        card.addEventListener("mouseover", function() {
+        this.style.boxShadow = "0px 8px 16px rgba(0, 0, 0, 0.5)";
+        });
+        card.addEventListener("mouseout", function() {
+        this.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.3)";
+        });
+    });
+
+    // Add event listeners for tag filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+        // Show all cards by default
+        cards.forEach(card => {
+            card.style.display = 'block';
+        });
+
+        // Get the selected tag
+        const selectedTag = button.textContent.toLowerCase();
+
+        // Hide cards that don't have the selected tag
+        cards.forEach(card => {
+            const tags = card.querySelectorAll('.filter-tag-bg');
+            let hasSelectedTag = false;
+            tags.forEach(tag => {
+            if (tag.textContent.toLowerCase() === selectedTag) {
+                hasSelectedTag = true;
+            }
+            });
+            if (!hasSelectedTag) {
+            card.style.display = 'none';
+            }
+        });
+        });
+    });
+
+    // Add event listener for search bar
+    searchBar.addEventListener('keyup', function(event) {
+        const searchString = event.target.value.toLowerCase();
+
+        // Loop through all cards
+        cards.forEach(card => {
+        let cardHasTag = false;
+        const cardTags = card.querySelectorAll('.filter-tag-bg');
+
+        // Check if card has at least one displayed tag containing the search string
+        cardTags.forEach(tag => {
+            if (tag.style.display !== 'none' && tag.textContent.toLowerCase().includes(searchString)) {
+            cardHasTag = true;
+            }
+        });
+
+        // If card has at least one displayed tag containing the search string, show it; otherwise, hide it
+        if (cardHasTag) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+        });
+    });
+    });
+
+        </script>
+    </head>
+    <body>
+        <h1>Projects</h1>
+        <a href="https://anisha00207.github.io/AnishaJoshi/"> <i class="fa fa-home" style="font-size:36px; "></i></a> 
+        <div class="search-bar">
+
+        <input type="text" placeholder="Search tags..." id="search-input">
+        <button id="search-button">Search</button>
+        
+        
+        </div>
+
+    <div id="tag-list">
+    <a  class="filter-tag-bg" class="tag-link" data-tag="tag1">Frontend</a>
+    <a  class="filter-tag-bg" class="tag-link" data-tag="tag2">Backend</a>
+    <a  class="filter-tag-bg" class="tag-link" data-tag="tag3">DSA</a>
+    <a href="./projects_work.html"  class="filter-tag-bg" style="text-decoration: none; color: inherit; "  >Reset</a>
     
-</body>
-</html>
+    
+    </div>
+        
+        <div class="container">
+
+            <div class="card">
+                <div class="project">
+       
+                       <img src="images/hotel.png" alt="hotel ">
+       
+                       <div class="layer">
+                           <p class="project-head">
+                            Hotel Fly-High
+                               </p>
+                           <p>
+                            Hotel Fly-High is hotel room + services booking WebApplication , it has an admin interface to manage the details of hotel, staff and customers.
+                            
+                           It uses PHP and MySQL as the backend to handle user authentication and real-time data.
+                           </p>
+                           <a href="http://hotel-flyyhigh.free.nf/index.php?i=1"><i class="fas fa-link"></i></a>
+                          
+                       </div>
+                   </div>
+                   <div class="card-content">
+                   <h2 class="card-title">  Hotel Fly-high  </h2>
+                   <div class="tag">
+                       <div class="filter-tag-bg">Backend</div>
+                       <div class="filter-tag-bg">webdevelopment</div>
+                       <div class="filter-tag-bg">PHP</div>
+       
+                       </div>
+                  
+                   </div>
+               </div>
+    
+        <div class="card">
+          
+            <div class="project">
+
+                <img src="images/vote.png" alt=" vote website">
+
+                <div class="layer">
+                    <h1>Polling App</h1>
+                    <p class="project-head">
+                   
+                    
+                       
+
+                    </p>
+                    <p>
+                        The website allows SuperUser to generate polls using and the user have to answer the polls with real-time update in results, the user can see the number of votes an option have. A user can vote only once
+                    </p>
+                    <a href="https://github.com/anisha00207/voting-app/"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <div class="card-content">
+            <h2 class="card-title">Polling App</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">Html</div>
+                <div class="filter-tag-bg">Css</div>
+
+                <div class="filter-tag-bg">python</div>
+                <div class="filter-tag-bg">Django</div>
+                <div class="filter-tag-bg">Backend</div>
+                </div>
+          
+            </div>
+        </div>
+            <div class="card">
+           
+
+            <div class="project">
+
+                <img src="images/student_man.png" alt="studen management">
+
+                <div class="layer">
+                    <p class="project-head">
+                      
+                        StudentDetails Management<br>
+                        
+
+                    </p>
+                    <p>
+                        On this platform, administrators can manage student data, including name, roll number, standard, image, and more, with real-time updates. Users can retrieve student information by entering basic details. The system also features a staff interface where each standard is assigned a teacher. Staff members have administrative access restricted to their respective classes, enabling them to add, update, and delete student records within their assigned classes only.
+              
+                    </p>
+                    <a href="https://github.com/anisha00207/School_management"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="card-content">
+            <h2 class="card-title"> StudentDetails Management
+                </h2> 
+
+            <div class="tag">
+                <div class="filter-tag-bg">PHP</div>
+                <div class="filter-tag-bg">HTML</div>
+                <div class="filter-tag-bg">CSS</div>
+                <div class="filter-tag-bg">MySQL</div>
+                <div class="filter-tag-bg">XAMPP</div>
+                <div class="filter-tag-bg">Backend</div>
+
+                </div>
+               
+          </div>
+                 
+        </div>
+        <div class="card">
+           
+
+            <div class="project">
+
+                <img src="images/guess.png" alt="Guess Game">
+
+                <div class="layer">
+                    <p class="project-head">
+                       
+                        Guess Game<br>
+                    
+
+                    </p>
+                    <p>
+                        A game where a user has to guess the same number as that of the 
+                        computer in the least number of chances possible in order to get a high score
+                    </p>
+                    <a href="https://anisha00207.github.io/GuessGame/"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="card-content">
+            <h2 class="card-title">Guess Game</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">Node</div>
+                <div class="filter-tag-bg">Frontend</div>
+                <div class="filter-tag-bg">JavaScript</div>
+                </div>
+            
+            </div>
+            
+        </div>
+        <div class="card">
+           
+            <div class="project">
+
+                <img src="images/blog.png" alt="Digital Diary">
+
+                <div class="layer">
+                    <h1>Digital Diary</h1>
+                   
+                    <p>
+                       Digital Diary is CRUD application where a user can craft thier daily moments, edit and delete them whenever they want.
+                    </p>
+                    <a href="https://node-blogjs-ouvk.vercel.app/"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <div class="card-content">
+            <h2 class="card-title">Digital Diary</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">EJS</div>
+                <div class="filter-tag-bg">Backend</div>
+                <div class="filter-tag-bg">JavaScript</div>
+                <div class="filter-tag-bg">Node Js</div>
+                <div class="filter-tag-bg">Express JS</div>
+                <div class="filter-tag-bg">MongoDB</div>
+              
+                </div>
+          
+            </div>
+        </div>
+        <div class="card">
+            
+            <div class="project">
+
+                <img src="images/tictactoe2.png" >
+
+                <div class="layer">
+                    <p class="project-head">
+                       
+                        TicTacToe  <br>
+                     
+
+                    </p>
+                    <p>
+                        This is a command-line implementation of the classic Tic-Tac-Toe game. 
+                        You can play against the computer, which uses the minimax algorithm to determine the best moves.
+                    </p>
+                    <a href="https://github.com/anisha00207/tic-tac-toe"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <div class="card-content">
+            <h2 class="card-title">TicTacToe</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">C++</div>
+                <div class="filter-tag-bg">mini-max</div>
+                <div class="filter-tag-bg">DSA</div>
+                
+                </div>
+           
+            </div>
+        </div>
+        <div class="card">
+           
+            <div class="project">
+
+                <img src="images/template.png" alt="template">
+
+                <div class="layer">
+                    <p class="project-head">
+                        Website clone <br>
+                    </p>
+                    <p>
+                       This website is a clone of the news website wired, it's a template website coded end to end in HTML, CSS for freelancing project. 
+                       
+                    </p>
+                    <a href="https://anisha00207.github.io/_website_template/"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <div class="card-content">
+            <h2 class="card-title">Website Clone End to End Coded</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">Html</div>
+                <div class="filter-tag-bg">Css</div>
+                <div class="filter-tag-bg">Frontend</div>
+
+                <div class="filter-tag-bg">JavaScript</div>
+                
+                </div>
+            
+            </div>
+        </div>
+        <div class="card">
+           
+            <div class="project">
+
+                <img src="images/calcu.png" alt="  Calculator">
+
+                <div class="layer">
+                    <p class="project-head">
+                         Calculator <br>
+                    </p>
+                    <p>
+                        This is a Simple calculator to perform basic maths calculations, built using HTML, CSS and JavaScript
+                        
+                    </p>
+                    <a href="https://anisha00207.github.io/project-calculator/"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+            <div class="card-content">
+            <h2 class="card-title"> Calculator</h2>
+            <div class="tag">
+                <div class="filter-tag-bg">Web Development</div>
+                <div class="filter-tag-bg">HTML</div>
+                <div class="filter-tag-bg">Frontend</div>
+                <div class="filter-tag-bg">CSS</div>
+                <div class="filter-tag-bg">JS</div>
+                </div>
+           
+            </div>
+        </div>
+       
+    </body>
+    </html>
