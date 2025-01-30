@@ -63,7 +63,28 @@
   transition: 0.3s;
   position: relative;
 }
-
+.top{
+    display:flex;
+}
+.homebtnn{
+    margin-left:30%;
+    margin-right:5%;
+}
+#home-btn {
+    
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ecb547; ;
+   
+    border-radius: 50%;
+    height:70%;
+    width:190%;
+  }
+  #home-btn:hover {
+    background-color: #555;
+  } 
 
 
 .card img {
@@ -270,13 +291,15 @@
     </head>
     <body>
         <h1>Projects</h1>
-        
+        <div class="top">
+       <div class="homebtnn"> <a href="./index.html"><button id="home-btn"class="fa-solid fa-house" ></button></a></div>
         <div class="search-bar">
 
         <input type="text" placeholder="Search tags..." id="search-input">
         <button id="search-button">Search</button>
+        </div>
         
-        
+
         </div>
 
     <div id="tag-list">
@@ -549,6 +572,16 @@
            
             </div>
         </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fas fa-arrow-up"></button>
        
+        <script src="https://unpkg.com/ityped@0.0.10"></script>
+       
+        
+    
+        </script> 
+       <script src=indx.js></script>
     </body>
     </html>
+
+
+           
