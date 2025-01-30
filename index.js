@@ -1,4 +1,5 @@
 
+
 var navbar = document.getElementById("navbar")
 var sidemenu=document.getElementById("sidemenu")
 var blur=document.getElementById("navbar")
@@ -18,12 +19,12 @@ window.onscroll=function(){
 //     strings: ['Web Developer!', 'Android Developer', 'Graphic Designer', 'Web/App Designer '],
 //     loop: true
 // })
-// window.ityped.init(document.querySelector('.ityped2'), {
-//     strings: ['Hello!', 'नमस्ते', 
-//     // 'こんにちは'
-//     , 'ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ '],
-//     loop: true
-// })
+ window.ityped.init(document.querySelector('.ityped2'), {
+    strings: ['Hello!', 'नमस्ते |', 
+     
+  , 'ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ '],
+    loop: true
+ })
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
@@ -73,6 +74,3 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-
-
