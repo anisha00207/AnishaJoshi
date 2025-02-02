@@ -1,5 +1,4 @@
 
-
 var navbar = document.getElementById("navbar")
 var sidemenu=document.getElementById("sidemenu")
 var blur=document.getElementById("navbar")
